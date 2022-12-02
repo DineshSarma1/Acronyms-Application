@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.acronymsapp.R
 import com.example.acronymsapp.data.FullForm
 import com.example.acronymsapp.databinding.ItemAcronymBinding

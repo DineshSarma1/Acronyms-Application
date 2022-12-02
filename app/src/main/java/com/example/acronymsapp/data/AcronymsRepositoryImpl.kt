@@ -1,7 +1,6 @@
 package com.example.acronymsapp.data
 
 import com.example.acronymsapp.util.NetworkState
-import retrofit2.Response
 import javax.inject.Inject
 
 class AcronymsRepositoryImpl @Inject constructor(

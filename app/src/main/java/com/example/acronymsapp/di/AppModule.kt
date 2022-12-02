@@ -1,6 +1,5 @@
 package com.example.acronymsapp.di
 
-import android.app.Application
 import com.example.acronymsapp.constants.Constant.BASE_URL
 import com.example.acronymsapp.data.AcronymsApiService
 import com.example.acronymsapp.data.AcronymsRepository
@@ -19,7 +18,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(context: Application) : Retrofit {
+    fun provideRetrofit() : Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)
