@@ -3,11 +3,13 @@ package com.example.acronymsapp.ui
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.acronymsapp.R
 import com.example.acronymsapp.data.FullForm
 import com.example.acronymsapp.databinding.ItemAcronymBinding
+import com.example.acronymsapp.util.DiffUtilCallbackImpl
 
 class AcronymAdapter(
     private val fullFormList: MutableList<FullForm> = mutableListOf()
@@ -21,9 +23,10 @@ class AcronymAdapter(
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateList(newList: MutableList<FullForm>) {
+        val result = DiffUtil.calculateDiff(DiffUtilCallbackImpl(fullFormList, newList))
         fullFormList.clear()
         fullFormList.addAll(newList)
-        notifyDataSetChanged()
+        result.dispatchUpdatesTo(this)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AcronymViewHolder {
@@ -38,4 +41,5 @@ class AcronymAdapter(
     }
 
     override fun getItemCount(): Int = fullFormList.size
+
 }
