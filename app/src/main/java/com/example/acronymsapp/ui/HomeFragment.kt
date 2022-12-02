@@ -35,7 +35,26 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 adapter.updateList(fullForm)
             }
         }
+
+        viewModel.errorMessage.observe(viewLifecycleOwner) { errorMessage ->
+            if(errorMessage.isNullOrEmpty()) {
+                binding.errorMessageTV.visibility = View.GONE
+            }else {
+                binding.errorMessageTV.text = errorMessage
+                binding.errorMessageTV.visibility = View.VISIBLE
+            }
+        }
+
+        viewModel.loading.observe(viewLifecycleOwner) { loading ->
+            if (loading) {
+                binding.progressBar.visibility = View.VISIBLE
+            }else {
+                binding.progressBar.visibility = View.GONE
+            }
+        }
+
     }
+
 
     private fun initRecyclerView() {
         adapter = AcronymAdapter()

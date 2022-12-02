@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
+
         <variable
             name="viewModel"
             type="com.example.acronymsapp.ui.HomeViewModel" />
@@ -56,11 +56,24 @@
                 android:layout_marginTop="10dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-
-            <ProgressBar
+            <TextView
+                android:id="@+id/errorMessageTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="@{viewModel.loading ? View.VISIBLE : View.GONE}" />
+                android:layout_marginHorizontal="10dp"
+                android:text="@{viewModel.errorMessage}"
+                android:visibility="visible"
+                android:padding="8dp"
+                android:layout_marginTop="20dp"
+                tools:text="error message"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
 
         </RelativeLayout>
 

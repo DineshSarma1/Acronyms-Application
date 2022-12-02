@@ -24,7 +24,7 @@ class HomeViewModel @Inject constructor(
 
     //Error message
     private val _errorMessage = MutableLiveData<String>()
-    //val errorMessage: LiveData<String> get() = _errorMessage
+    val errorMessage: LiveData<String> get() = _errorMessage
 
     //loading state
     private val _loading = MutableLiveData<Boolean>()
@@ -38,12 +38,13 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun loadData(input: String) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             try {
                 when (val response = repository.getAcronymList(input)) {
 
                     is NetworkState.Success -> {
                         _data.postValue(response.data!!)
+                        _loading.value = false
                     }
 
                     is NetworkState.Error -> {
@@ -52,6 +53,8 @@ class HomeViewModel @Inject constructor(
                 }
             }catch (e: UnknownServiceException) {
                 Log.e(TAG,"Error: ${e.message}")
+                _errorMessage.value = e.message
+                _loading.value = false
             }
         }
     }

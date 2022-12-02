@@ -10,7 +10,6 @@ class AcronymsRepositoryImpl @Inject constructor(
 
     override suspend fun getAcronymList(sf: String): NetworkState<MutableList<AcronymResponse>> {
         val response = apiService.getAcronymList(sf)
-
         return if (response.isSuccessful) {
             val responseBody = response.body()
             if (responseBody != null) {
