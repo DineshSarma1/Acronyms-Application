@@ -2,7 +2,7 @@ package com.example.acronymsapp.util
 
 import androidx.recyclerview.widget.DiffUtil
 
-class DiffUtilCallbackImpl<FullForm> (private val oldList: List<FullForm>, private val newList: List<FullForm>): DiffUtil.Callback() {
+class DiffUtilCallbackImpl<T> (private val oldList: List<T>, private val newList: List<T>): DiffUtil.Callback() {
     override fun getOldListSize(): Int = oldList.size
 
     override fun getNewListSize(): Int = newList.size
