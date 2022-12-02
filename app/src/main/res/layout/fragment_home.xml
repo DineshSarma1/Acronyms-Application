@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.example.acronymsapp.ui.HomeViewModel" />
@@ -26,11 +25,14 @@
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
                 android:layout_weight="1"
+                android:autofillHints="acronym"
                 android:gravity="center_vertical"
                 android:hint="@string/acronyms_hint"
-                android:text="@={viewModel.acronym}"
+                android:inputType="text"
                 android:padding="8dp"
+                android:text="@={viewModel.acronym}"
                 android:textColor="@color/black"
+                android:textColorHint="@color/hint_color"
                 android:textSize="16sp" />
 
             <Button
@@ -76,7 +78,5 @@
                 android:visibility="gone" />
 
         </RelativeLayout>
-
-
     </LinearLayout>
 </layout>

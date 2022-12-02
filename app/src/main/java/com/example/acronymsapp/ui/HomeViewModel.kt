@@ -19,8 +19,8 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
 
     //Api Live Data
-    private val _data: MutableLiveData<List<AcronymResponse>> = MutableLiveData()
-    val data: LiveData<List<AcronymResponse>> get() = _data
+    private val _data: MutableLiveData<MutableList<AcronymResponse>> = MutableLiveData()
+    val data: LiveData<MutableList<AcronymResponse>> get() = _data
 
     //Error message
     private val _errorMessage = MutableLiveData<String>()
