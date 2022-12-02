@@ -19,18 +19,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentHomeBinding.bind(view)
 
+        binding = FragmentHomeBinding.bind(view)
         viewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
         binding.viewModel = viewModel
 
         initRecyclerView()
-
         observeData()
     }
 
     private fun observeData() {
-
         viewModel.data.observe(viewLifecycleOwner) {acronymResponse ->
             acronymResponse?.let {
                 val fullForm = acronymResponse[0].lfd
