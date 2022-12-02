@@ -22,6 +22,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding = FragmentHomeBinding.bind(view)
 
         viewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
+        binding.viewModel = viewModel
 
         initRecyclerView()
 
@@ -43,8 +44,4 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.recyclerViewAcronyms.adapter = adapter
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() = HomeFragment()
-    }
 }
