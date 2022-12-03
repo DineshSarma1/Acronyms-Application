@@ -1,5 +1,6 @@
-package com.example.acronymsapp.data
+package com.example.acronymsapp.repository
 
+import com.example.acronymsapp.data.AcronymResponse
 import com.example.acronymsapp.util.NetworkState
 
 interface AcronymsRepository {

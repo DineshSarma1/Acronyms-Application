@@ -1,8 +1,8 @@
 package com.example.acronymsapp.ui
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.acronymsapp.data.AcronymsRepository
-import com.example.acronymsapp.data.AcronymsRepositoryImpl
+import com.example.acronymsapp.repository.AcronymsRepository
+import com.example.acronymsapp.repository.AcronymsRepositoryImpl
 import io.mockk.mockk
 import org.junit.Assert.*
 import org.junit.Before

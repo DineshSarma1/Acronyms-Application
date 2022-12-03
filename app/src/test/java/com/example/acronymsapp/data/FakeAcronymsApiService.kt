@@ -1,9 +1,9 @@
 package com.example.acronymsapp.data
 
-import com.example.acronymsapp.util.NetworkState
+import com.example.acronymsapp.api.AcronymsApiService
 import retrofit2.Response
 
-class FakeDataSource : AcronymsApiService{
+class FakeAcronymsApiService : AcronymsApiService {
 
     override suspend fun getAcronymList(sf: String): Response<MutableList<AcronymResponse>> {
         val fakeData = mutableListOf<AcronymResponse>(

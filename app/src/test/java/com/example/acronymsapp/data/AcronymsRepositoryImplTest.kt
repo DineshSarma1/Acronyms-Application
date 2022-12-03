@@ -1,5 +1,7 @@
 package com.example.acronymsapp.data
 
+import com.example.acronymsapp.repository.AcronymsRepository
+import com.example.acronymsapp.repository.AcronymsRepositoryImpl
 import com.example.acronymsapp.util.NetworkState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
@@ -34,7 +36,7 @@ class AcronymsRepositoryImplTest {
             )
         )
 
-        val apiService = FakeDataSource()
+        val apiService = FakeAcronymsApiService()
         acronymsRepository = AcronymsRepositoryImpl(apiService)
     }
 

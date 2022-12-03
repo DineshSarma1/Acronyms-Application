@@ -1,9 +1,9 @@
 package com.example.acronymsapp.di
 
 import com.example.acronymsapp.constants.Constant.BASE_URL
-import com.example.acronymsapp.data.AcronymsApiService
-import com.example.acronymsapp.data.AcronymsRepository
-import com.example.acronymsapp.data.AcronymsRepositoryImpl
+import com.example.acronymsapp.api.AcronymsApiService
+import com.example.acronymsapp.repository.AcronymsRepository
+import com.example.acronymsapp.repository.AcronymsRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

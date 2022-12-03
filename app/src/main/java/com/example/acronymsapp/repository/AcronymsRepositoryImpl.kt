@@ -1,11 +1,13 @@
-package com.example.acronymsapp.data
+package com.example.acronymsapp.repository
 
+import com.example.acronymsapp.data.AcronymResponse
+import com.example.acronymsapp.api.AcronymsApiService
 import com.example.acronymsapp.util.NetworkState
 import javax.inject.Inject
 
 class AcronymsRepositoryImpl @Inject constructor(
     private val apiService: AcronymsApiService
-) : AcronymsRepository{
+) : AcronymsRepository {
 
     override suspend fun getAcronymList(sf: String): NetworkState<MutableList<AcronymResponse>> {
         val response = apiService.getAcronymList(sf)

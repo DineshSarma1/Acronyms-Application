@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.acronymsapp.data.AcronymResponse
-import com.example.acronymsapp.data.AcronymsRepository
+import com.example.acronymsapp.repository.AcronymsRepository
 import com.example.acronymsapp.util.NetworkState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
